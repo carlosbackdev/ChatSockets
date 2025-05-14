@@ -4,6 +4,7 @@ import com.chatsocket.controller.ServidorController;
 import com.chatsocket.hilos.ManejoClientes;
 
 import java.io.*;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Collections;
@@ -23,12 +24,13 @@ public class Servidor extends Thread {
 
     public void iniciarServidor(int puerto) {
         try {
-            serverSocket = new ServerSocket(puerto);
+            serverSocket = new ServerSocket(puerto,0, InetAddress.getByName("0.0.0.0"));
             System.out.println("Servidor iniciado en puerto " + puerto);
 
             while (true) {
                 Socket clienteSocket = serverSocket.accept();
                 System.out.println("Cliente conectado: " + clienteSocket.toString());
+                servidorController.agregarLog("Datos Cliente: "+ clienteSocket.toString());
                 servidorController.agregarLog(String.format("Cliente conectado: %s", clienteSocket.getInetAddress()));
 
                 DataInputStream input = new DataInputStream(clienteSocket.getInputStream());
