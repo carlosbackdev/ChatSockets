@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="500.0" prefWidth="325.0" style="-fx-background-color: #e5ddd5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chatsocket.controller.ClienteController">
+
+    <!-- Encabezado del chat -->
+    <HBox alignment="CENTER_LEFT" style="-fx-background-color: #075e54; -fx-padding: 10px;">
+        <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
+            <image>
+                <Image url="@../../images/profile.png" />
+            </image>
+        </ImageView>
+        <VBox style="-fx-padding: 0 0 0 10px;">
+            <Label fx:id="usuario" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Nombre del contacto" />
+            <Label fx:id="isConected" style="-fx-text-fill: #a3e0d8; -fx-font-size: 12px;" text="en línea" />
+        </VBox>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button fx:id="btnCerrar" onAction="#cerrar" style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/more.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </HBox>
+
+    <!-- Área de mensajes -->
+    <ScrollPane fx:id="messageScrollPane" fitToWidth="true" style="-fx-background: #e5ddd5; -fx-border-width: 0;" VBox.vgrow="ALWAYS">
+        <VBox fx:id="messageContainer" style="-fx-padding: 10px; -fx-spacing: 10px;" />
+    </ScrollPane>
+
+    <!-- Área de entrada -->
+    <HBox spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10px;">
+        <Button style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/emoji.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button style="-fx-background-color: transparent;">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/attach.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <TextField fx:id="messageField" style="-fx-background-radius: 20; -fx-background-color: white; -fx-padding: 10px;" HBox.hgrow="ALWAYS" />
+        <Button fx:id="sendButton" onAction="#enviar" style="-fx-background-color: #075e54; -fx-background-radius: 20; -fx-min-width: 40; -fx-min-height: 40;">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/send.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </HBox>
+</VBox>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="379.0" prefWidth="213.0" spacing="20" style="-fx-background-color: #075e54;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chatsocket.controller.LoginController">
+    <padding>
+    </padding>
+
+    <ImageView fitHeight="48.0" fitWidth="43.0" preserveRatio="true">
+        <image>
+            <Image url="@../../images/chat-icon.png" />
+        </image>
+    </ImageView>
+
+    <Label style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" text="Chat App" />
+
+    <VBox spacing="10" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Iniciar Sesión" />
+
+        <TextField fx:id="nombreField" promptText="Tu nombre" style="-fx-background-radius: 5;" />
+
+        <TextField fx:id="puertoField" promptText="Puerto del servidor" style="-fx-background-radius: 5;" />
+
+        <TextField fx:id="hostField" promptText="Host (ej: localhost)" style="-fx-background-radius: 5;" text="localhost" />
+
+        <Button fx:id="btnConectar" onAction="#conectar" style="-fx-background-color: #075e54; -fx-text-fill: white; -fx-background-radius: 5; -fx-font-weight: bold; -fx-padding: 8;" text="Conectar" />
+    </VBox>
+</VBox>
