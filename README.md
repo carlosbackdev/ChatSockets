@@ -64,8 +64,10 @@ Launch multiple client instances for group chat testing.
 
 ---
 
-# 📷 Screenshots
-(Add your GUI screenshots here)
+# 📷 Screenshot
+
+![Socket Java](https://github.com/user-attachments/assets/b3b147af-824d-400f-b735-f6bd363ccc2e)
+
 
 ---
 
